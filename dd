@@ -1,0 +1,11 @@
+SELECT 
+    Klienci.Imię & " " & Klienci.Nazwisko AS Klient,
+    Samochody.Marka & " " & Samochody.Model AS Samochód,
+    Samochody.NrRejestracyjny,
+    Wypożyczenia.DataWypożyczenia,
+    Wypożyczenia.DataZwrotu,
+    Wypożyczenia.Cena
+FROM 
+    (Wypożyczenia 
+        INNER JOIN Klienci ON Wypożyczenia.ID_Klienta = Klienci.ID_Klienta)
+        INNER JOIN Samochody ON Wypożyczenia.ID_Samochodu = Samochody.ID_Samochodu;
