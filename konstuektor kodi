@@ -1,0 +1,4 @@
+Private Sub Nazwisko_AfterUpdate()
+    Me.Filter = "[Nazwisko] Like '*" & Me.Nazwisko & "*'"
+    Me.FilterOn = True
+End Sub
